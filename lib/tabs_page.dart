@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:movies_app_team/search/search_page.dart';
 import 'package:movies_app_team/watchlist/watchlist_page.dart';
 
-import 'api/api_manager.dart';
 import 'browse/browse_page.dart';
-import 'colors.dart';
 import 'home/home_page.dart';
-import 'model/UpcomingMoviesResponse.dart';
 
 class TabsPage extends StatefulWidget {
   static const String routeName = 'bottomNav';
@@ -47,31 +44,12 @@ class _TabsPageState extends State<TabsPage> {
               },
               currentIndex: selectedPage,
             ),
-            body: FutureBuilder<UpcomingMoviesResponse?>(
-              future: ApiManager.getResult(),
-              builder: (context, snapshot) {
-                if(snapshot.connectionState == ConnectionState.waiting){
-                  return Center(child: CircularProgressIndicator(
-                    color: AppColor.primaryColor,
-                  ),);
-                }else if(snapshot.hasError){
-                  return Text("Something Went Wrong!") ;
-                }
-
-                if(snapshot.data!.success == 'false'){
-                  return Text(snapshot.data!.status_message!);
-                }
-                var resultList = snapshot.data!.results!;
-                //resultList[index].title??""
-                return  HomePage(resultList: resultList);
-
-
-              },) ,
+            body: tabs[selectedPage],
           ),
         ],
       ),
     );
   }
 
-  // List<Widget> tabs = [HomePage(), SearchPage(), BrowsePage(), WatchListPage()];
+  List<Widget> tabs = [HomePage(), SearchPage(), BrowsePage(), WatchListPage()];
 }

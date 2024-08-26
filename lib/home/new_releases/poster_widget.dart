@@ -9,7 +9,7 @@ class PosterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        //image
+        //image poster
         Container(
             clipBehavior: Clip.antiAlias,
             decoration: const BoxDecoration(
