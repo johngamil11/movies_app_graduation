@@ -3,7 +3,6 @@ class ApiConstants {
 
   static const String upcomingApi = '/3/movie/upcoming';
   static const String recomendedApi = '/3/movie/top_rated';
-
-  /// testing api on github
-/// another test for api to checkk the dev
+  static const String sliderApi = '/3/movie/popular';
+  static const String movieDetailsApi = '/3/movie/';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app_team/home/new_releases/new_releases_get_api.dart';
 import 'package:movies_app_team/home/recomended/recomended_get_api.dart';
+import 'package:movies_app_team/home/slider/slider_get_api.dart';
 
 import '../colors.dart';
 
@@ -23,8 +24,8 @@ class HomePage extends StatelessWidget {
         Container(
           child: SingleChildScrollView(
             child: Column(children: [
-              /// todo scroll movie poster
-              RecomendedGetApi(),
+              /// todo slider scroll movie poster
+              SliderGetApi(),
               SizedBox(
                 height: height * 0.03,
               ),

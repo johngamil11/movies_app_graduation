@@ -22,7 +22,7 @@ class RecomendedWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            "Recommended 🔥",
+            "Recommended",
             style: TextStyle(color: Colors.white),
           ),
           SizedBox(
