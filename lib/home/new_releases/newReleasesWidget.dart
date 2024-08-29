@@ -22,7 +22,7 @@ class NewReleasesWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            "New Releases",
+            "New Releases 🔥",
             style: TextStyle(color: Colors.white),
           ),
           SizedBox(
