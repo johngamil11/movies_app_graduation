@@ -8,4 +8,5 @@ class AppColor {
   static const goldColor = Color(0xffFFA90A);
   static const widgetBackground = Color(0xff282A28);
   static const posterGreyBackground = Color(0xff343534);
+  static const whiteColor = Color(0xffffffff);
 }
