@@ -1,7 +1,9 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'package:movies_app_team/model/RecomendedMoviesResponse.dart';
+import 'package:movies_app_team/model/search_model.dart';
 
 import '../model/SliderResponse.dart';
 import '../model/UpcomingMoviesResponse.dart';
@@ -48,4 +50,19 @@ class ApiManager {
 //     // gbt el data mn el server 3shan a3rdha fl application.
 //     return SliderResponse.fromJson(jsonDecode(response.body));
 //   }
+
+  Future<SearchModel> getSearchMovie(String searchText) async {
+    ///https://api.themoviedb.org/3/search/movie?api_key=062030db387c8f0f3bce376cfb433da8&query=harry
+
+    Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.searchMovieApi,
+        {'api_key': '062030db387c8f0f3bce376cfb433da8', 'query': searchText});
+    print("search url is $url");
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      log("Success");
+      return SearchModel.fromJson(jsonDecode(response.body));
+    }
+    throw Exception("Failed to load search movies");
+  }
 }
