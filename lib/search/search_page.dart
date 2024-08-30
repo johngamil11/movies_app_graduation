@@ -10,7 +10,6 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
     return SafeArea(
       child: Scaffold(
           backgroundColor: AppColor.backgroundNavigator,

@@ -7,6 +7,7 @@ import 'package:movies_app_team/model/MovieDetailsResponse.dart';
 import 'package:movies_app_team/model/RecomendedMoviesResponse.dart';
 import 'package:movies_app_team/model/SimillarResponse.dart';
 import 'package:movies_app_team/model/search_model.dart';
+import 'package:movies_app_team/model/search_model.dart';
 
 import '../model/GenreResponse.dart';
 import '../model/SliderResponse.dart';
