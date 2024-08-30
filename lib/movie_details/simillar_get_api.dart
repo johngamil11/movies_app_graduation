@@ -16,7 +16,7 @@ class SimillarGetApi extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
             child: CircularProgressIndicator(
-              color: AppColor.primaryColor,
+              color: AppColor.whiteColor,
             ),
           );
         } else if (snapshot.hasError) {

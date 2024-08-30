@@ -56,7 +56,6 @@ class RecomendedWidget extends StatelessWidget {
                   onTap: () {
                     // MovieDetailsResponse movieDetailsResponse ;
                     name = resultList[index].title ?? '';
-                    name = resultList[index].title ?? '';
                     backdropPath = resultList[index].backdropPath ?? '';
                     overFlow = resultList[index].overview ?? '';
                     voteAverage = resultList[index].voteAverage ?? '';
