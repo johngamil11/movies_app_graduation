@@ -36,26 +36,29 @@ class _SearchMovieItemState extends State<SearchMovieItem> {
     var width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        TextField(
-          onChanged: (value) {
-            if (value.isEmpty) {
-            } else {
-              search(searchControllers.text);
-            }
-          },
-          controller: searchControllers,
-          decoration: InputDecoration(
-            hintText: 'Search...',
-            hintStyle: const TextStyle(color: AppColor.whiteColor),
-            prefixIcon: const Icon(
-              Icons.search,
-              color: AppColor.whiteColor,
-            ),
-            filled: true,
-            fillColor: AppColor.greyColor.withOpacity(0.3),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide.none,
+        Padding(
+          padding: const EdgeInsets.all(15),
+          child: TextField(
+            onChanged: (value) {
+              if (value.isEmpty) {
+              } else {
+                search(searchControllers.text);
+              }
+            },
+            controller: searchControllers,
+            decoration: InputDecoration(
+              hintText: 'Search...',
+              hintStyle: const TextStyle(color: AppColor.whiteColor),
+              prefixIcon: const Icon(
+                Icons.search,
+                color: AppColor.whiteColor,
+              ),
+              filled: true,
+              fillColor: AppColor.greyColor.withOpacity(0.3),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide.none,
+              ),
             ),
           ),
         ),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app_team/home/recomended/recomended_widget.dart';
-import 'package:movies_app_team/model/RecomendedMoviesResponse.dart';
+import 'package:movies_app_team/browse/main_category_screen/category_screen.dart';
 
-import '../../api/api_manager.dart';
-import '../../colors.dart';
+import '../../../api/api_manager.dart';
+import '../../../colors.dart';
+import '../../model/GenreResponse.dart';
 
-class RecomendedGetApi extends StatelessWidget {
-  const RecomendedGetApi({super.key});
+class GenreGetApi extends StatelessWidget {
+  const GenreGetApi({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<RecomendedMoviesResponse?>(
-      future: ApiManager.getRecomendedResult(),
+    return FutureBuilder<GenreResponse?>(
+      future: ApiManager.getGenreResult(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
@@ -26,14 +26,9 @@ class RecomendedGetApi extends StatelessWidget {
         if (snapshot.data!.success == 'false') {
           return Text(snapshot.data!.status_message!);
         }
-        var resultList = snapshot.data!.results!;
+        var resultList = snapshot.data!.genres!;
         //resultList[index].title??""
-        return Column(children: [
-          RecomendedWidget(
-            resultList: resultList,
-            widgetTitle: 'Recommended',
-          ),
-        ]);
+        return CategoryScreen(resultList: resultList);
       },
     );
   }

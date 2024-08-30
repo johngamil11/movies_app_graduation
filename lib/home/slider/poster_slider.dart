@@ -4,8 +4,15 @@ import 'package:movies_app_team/home/new_releases/poster_widget.dart';
 class PosterSlider extends StatelessWidget {
   var backGround;
   var poster;
+  var title;
 
-  PosterSlider({required this.poster, required this.backGround});
+  var year;
+
+  PosterSlider(
+      {required this.poster,
+      required this.backGround,
+      required this.title,
+      required this.year});
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +33,26 @@ class PosterSlider extends StatelessWidget {
             width: double.infinity,
             height: height * 0.2,
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 PosterWidget(poster: poster),
-                Text(
-                  "Movie Name and Details",
-                  style: TextStyle(color: Colors.white),
-                )
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: Text(
+                        title,
+                        style: TextStyle(color: Colors.white, fontSize: 25),
+                      ),
+                    ),
+                    Text(
+                      year.toString().substring(0, 4),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
+                  ],
+                ),
               ],
             ))
       ],
