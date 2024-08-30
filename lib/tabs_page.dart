@@ -17,35 +17,37 @@ class _TabsPageState extends State<TabsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            items: [
-              BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/Home icon.png")),
-                  label: "HOME"),
-              BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/search-2.png")),
-                  label: "SEARCH"),
-              BottomNavigationBarItem(
-                  icon: ImageIcon(
-                      AssetImage("assets/images/Icon material-movie.png")),
-                  label: "BROWSE"),
-              BottomNavigationBarItem(
-                  icon: ImageIcon(
-                      AssetImage("assets/images/Icon ionic-md-bookmarks.png")),
-                  label: "WATCHLIST"),
-            ],
-            onTap: (index) {
-              selectedPage = index;
-              setState(() {});
-            },
-            currentIndex: selectedPage,
+    return SafeArea(
+      child: Stack(
+        children: [
+          Scaffold(
+            bottomNavigationBar: BottomNavigationBar(
+              items: [
+                BottomNavigationBarItem(
+                    icon: ImageIcon(AssetImage("assets/images/Home icon.png")),
+                    label: "HOME"),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(AssetImage("assets/images/search-2.png")),
+                    label: "SEARCH"),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                        AssetImage("assets/images/Icon material-movie.png")),
+                    label: "BROWSE"),
+                BottomNavigationBarItem(
+                    icon: ImageIcon(
+                        AssetImage("assets/images/Icon ionic-md-bookmarks.png")),
+                    label: "WATCHLIST"),
+              ],
+              onTap: (index) {
+                selectedPage = index;
+                setState(() {});
+              },
+              currentIndex: selectedPage,
+            ),
+            body: tabs[selectedPage],
           ),
-          body: tabs[selectedPage],
-        ),
-      ],
+        ],
+      ),
     );
   }
 

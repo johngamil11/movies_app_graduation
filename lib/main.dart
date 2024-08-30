@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app_team/movie_details/movie_details_screen.dart';
 import 'package:movies_app_team/tabs_page.dart';
 import 'package:movies_app_team/theme_data.dart';
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: TabsPage.routeName,
       routes: {
         TabsPage.routeName: (context) => TabsPage(),
+        MovieDetailsScreen.routeName: (context) => MovieDetailsScreen(),
       },
     );
   }
