@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app_team/home/recomended/recomended_widget.dart';
-import 'package:movies_app_team/model/RecomendedMoviesResponse.dart';
+import 'package:movies_app_team/model/SimillarResponse.dart';
 
 import '../../api/api_manager.dart';
 import '../../colors.dart';
 
-class RecomendedGetApi extends StatelessWidget {
-  const RecomendedGetApi({super.key});
-
+class SimillarGetApi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<RecomendedMoviesResponse?>(
-      future: ApiManager.getRecomendedResult(),
+    var argus =
+        ModalRoute.of(context)?.settings.arguments as RecomamendedWidgetArgus;
+    return FutureBuilder<SimillarResponse?>(
+      future: ApiManager.getSimillarResult(argus.id),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(
@@ -31,7 +31,7 @@ class RecomendedGetApi extends StatelessWidget {
         return Column(children: [
           RecomendedWidget(
             resultList: resultList,
-            widgetTitle: 'Recommended',
+            widgetTitle: "",
           ),
         ]);
       },

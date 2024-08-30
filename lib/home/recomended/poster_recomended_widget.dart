@@ -68,44 +68,42 @@ class PosterRecomendedWidget extends StatelessWidget {
             ],
           ),
           // movie details
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // star with rating
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // star with rating
 
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: AppColor.goldColor,
-                      size: 20,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      rating.toStringAsFixed(1),
-                      style: TextStyle(color: Colors.white),
-                    )
-                  ],
-                ),
-                //movie name
-                Text(
-                  movieName,
-                  style: TextStyle(color: Colors.white),
-                ),
-                //year + R + movie time
-                Text(
-                  time.substring(0, 4),
-                  style: TextStyle(color: AppColor.textGreyColor),
-                ),
-              ],
-            ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: AppColor.goldColor,
+                    size: 20,
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    rating.toStringAsFixed(1),
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+              //movie name
+              Text(
+                movieName,
+                style: TextStyle(color: Colors.white),
+              ),
+              //year + R + movie time
+              Text(
+                time.substring(0, 4),
+                style: TextStyle(color: AppColor.textGreyColor),
+              ),
+            ],
           )
         ],
       ),
